@@ -19,9 +19,8 @@ async function singIn(email, password){
 
 async function create(email, password){
     try {
-        const user = createUserWithEmailAndPassword(auth, email, password);
+        const user = await createUserWithEmailAndPassword(auth, email, password);
         return user._tokenResponse.localId;
-
     } catch (error) {
         console.log(error);
         return -1;
