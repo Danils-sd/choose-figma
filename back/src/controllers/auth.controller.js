@@ -2,7 +2,7 @@ const { login, regist } = require("../services/auth.service");
 
 async function singInUser(req, res){
     try {
-        res.json({uId: await login(req.body.email, req.body.password)});
+        res.json({data: {uId: await login(req.body.email, req.body.password)}});
     } catch (error) {
         console.log(error);
     }
@@ -10,7 +10,8 @@ async function singInUser(req, res){
 
 async function createUser(req, res){
     try {
-        res.json({uId: await regist(req.body.login, req.body.email, req.body.password)});
+        console.log(req.body)
+        res.json({data: {uId: await regist(req.body.login, req.body.email, req.body.password)}});
     } catch (error) {
         console.log(error);
     }

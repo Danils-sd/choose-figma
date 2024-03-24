@@ -1,0 +1,122 @@
+.reg-container{
+    width: 1512px;
+    height: 820px;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-container--sercl-blue{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(6px);
+    background: rgb(36, 201, 227);
+    position: absolute;
+    top: 370px;
+    left: 356px;
+}
+
+.reg-container--sercl-perpl{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    left: 797px;
+    top: 30px;
+    filter: blur(6px);
+    background: rgb(228, 68, 254);
+}
+
+.reg-container--card{
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(80, 80, 80, 0.2);
+    border-radius: 30px;
+
+    box-shadow: 13px 13px 57px 0px rgba(166, 166, 166, 0.8),-13px -13px 57px 0px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(100px);
+    background: rgba(240, 240, 240, 0.2);
+}
+
+.reg-container--card-ab{
+    margin-top: 36px;
+    font-family: Cabin;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 67px;
+    letter-spacing: 0px;
+}
+
+input{
+    outline: 0 !important;
+}
+
+.reg-container--card-inp-email{
+    width: 350px;
+    height: 45px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    border: 2.5px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+
+    color: rgb(150, 150, 150);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0px;
+}
+
+.reg-container--card-inp-password{
+    margin-top: 28px;
+    width: 350px;
+    height: 45px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    border: 2.5px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+
+    color: rgb(150, 150, 150);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0px;
+}
+
+.reg-container--card-btn{
+    margin-top: 40px;
+    width: 350px;
+    height: 58px;
+    border-radius: 15px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0px;
+}
+
+.reg-container--card-to--reg{
+    margin-top: 28px;
+    color: rgb(100, 100, 100);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0px;
+}
+
+.reg-container--card-to--reg-src{
+    margin-left: 4px;
+    color: rgb(26, 120, 255);
+}
