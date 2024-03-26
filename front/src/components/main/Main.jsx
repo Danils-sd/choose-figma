@@ -1,7 +1,22 @@
-
+import { useEffect, useState } from "react";
+import LayoutsCard from "../elements/cardLayout/LayoutsCard";
 import Navbar from "../elements/navbar/Navbar";
+import CONSTS from "../../CONSTS";
 import "./Main.css";
 function Main(){
+    const [layouts, setLayouts] = useState([])
+    const [isLoading, setIsLoading] = useState(false);
+    useEffect(() => {
+        fetch(CONSTS.URL + "/filter/all", {
+            method: "get"
+        }).then(res => {
+            return res.json();
+        }).then(({data}) => {
+            setLayouts(data);
+            setIsLoading(true);
+            console.log(data);
+        })
+    }, [])
     return(
         <div className="main-container">
             <Navbar/>
@@ -30,6 +45,15 @@ function Main(){
                         <option className="main-container-filter-option">Многостраничный</option>
                     </select>
                 </div>
+            </div>
+            <div className="main-container--layouts">
+                {isLoading && (
+                    layouts.map(e => {
+                        return(
+                            <LayoutsCard id={e.id} userId={e.userId} url={e.url} name={e.name} discription={e.discription} hard={e.hard} pages={e.pages} lang={e.lang}/>
+                        )
+                    })
+                )}
             </div>
         </div>
     )
