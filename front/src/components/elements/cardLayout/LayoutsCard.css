@@ -61,3 +61,21 @@
     border-radius: 20px;
     background: linear-gradient(225.00deg, rgba(228, 68, 254, 0.5),rgba(36, 201, 227, 0.5))
 }
+
+.layoutCard-container-addFavorite{
+    /* display: none; */
+    margin-top: 80px;
+    margin-left: 300px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.layoutCard-container-addFavorite:hover{
+    /* display: contents; */
+    margin-top: 77px;
+    margin-left: 300px;
+    width: 46px;
+    height: 46px;
+}

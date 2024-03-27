@@ -1,5 +1,6 @@
 import "./LayoutsCard.css";
-
+import CONSTS from "../../../CONSTS"
+import { useState } from "react";
 function LayoutsCard({
     id,
     userId,
@@ -10,8 +11,34 @@ function LayoutsCard({
     pages,
     lang
 }){
+    const [imgSrc, setImgSrc] = useState("./imgs/fav-dell.png");
+    const [isAdding, setIsAdding] = useState(0);
+    const handlAddFavorite = () => {
+        if(isAdding == 0){
+            fetch(CONSTS.URL + "/favorite/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userId: userId,
+                    layoutId: id
+                })
+            }).then(res => {
+                return res.json();
+            }).then(({data}) => {
+                console.log(data)
+                if(data == 1){
+                    setImgSrc("./imgs/fav-add.png")
+                    setIsAdding(1);
+                }
+            })
+        }
+        
+    }
     return(
         <div className="layoutCard-container">
+            <img onClick={handlAddFavorite} src={imgSrc} className="layoutCard-container-addFavorite"/>
             <div className="layoutCard-container-params">
                 <span className="layoutCard-container-param">{hard}</span>
                 <span className="layoutCard-container-param">{pages}</span>

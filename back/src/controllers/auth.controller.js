@@ -10,7 +10,6 @@ async function singInUser(req, res){
 
 async function createUser(req, res){
     try {
-        console.log(req.body)
         res.json({data: {uId: await regist(req.body.login, req.body.email, req.body.password)}});
     } catch (error) {
         console.log(error);
