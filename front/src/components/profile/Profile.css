@@ -1,0 +1,111 @@
+.profile-container{
+    width: 1512px;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.3);
+}
+
+.profile-container-content{
+    width: 100%;
+    display: flex;
+}
+
+.profile-container-left-content{
+    box-sizing: border-box;
+    padding-left: 100px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #cdcdcd;
+    min-height: 800px;
+}
+
+.profile-container-left-content-login{
+    font-size: 50px;
+    font-family: Inter;
+}
+
+.profile-container-left-content-email{
+    width: 400px;
+    margin-left: -100px;
+    padding-left: 100px;
+    padding-bottom: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+    font-family: Inter;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.profile-container-left-content-layoutes{
+    margin-top: 20px;
+    width: 250px;
+    font-size: 40px;
+    font-family: Inter;
+    border-bottom: 2px solid #cdcdcd;
+}
+
+.profile-container-left-content-favorite{
+    margin-top: 50px;
+    width: 320px;
+    font-size: 40px;
+    font-family: Inter;
+    border-bottom: 2px solid #cdcdcd;
+}
+
+.profile-container-right-content{
+    width: 1000px;
+}
+
+.profile-container-right-content-lqyouts{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-container-right-content-lqyouts-top{
+    width: 90%;
+    height: 185px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cdcdcd;
+    align-items: end;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+
+.profile-container-right-content-lqyouts-top-text{
+    font-size: 40px;
+    font-family: Inter;
+}
+
+.profile-container-right-content-lqyouts-top-btn{
+    font-size: 22px;
+    font-family: Inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    border: 1px solid #cdcdcd;
+    text-decoration: none;
+    padding: 15px 40px 15px 40px;
+    border-radius: 20px;
+    background: linear-gradient(225.00deg, rgba(228, 68, 254, 0.5),rgba(36, 201, 227, 0.5))
+}
+
+.profile-container-right-content-lqyouts-top-btn-img{
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+.profile-container-right-content-lqyouts-bottom{
+    width: 90%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+}

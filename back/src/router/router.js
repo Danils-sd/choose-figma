@@ -5,6 +5,7 @@ const router = express.Router();
 const controllerAuth = require("../controllers/auth.controller");
 const controllerFilter = require("../controllers/filter.controller");
 const controllerFavorite = require("../controllers/favorit.controller");
+const controllerUser = require("../controllers/user.controller");
 
 router.post("/auth/singIn", controllerAuth.singInUser);
 
@@ -25,5 +26,10 @@ router.post("/favorite/delete", controllerFavorite.deleteFav);
 router.post("/favorite/chek", controllerFavorite.chekFav);
 
 router.get("/favorite/getAll/:userId", controllerFavorite.getFav)
+
+
+router.get("/user/get/:userId", controllerUser.getU);
+
+router.get("/user/getLayouts/:userId", controllerUser.getLa);
 
 module.exports = router;

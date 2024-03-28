@@ -5,6 +5,7 @@ import Reg from "./reg/Reg";
 import Reset from "./reset/Reset";
 import Main from "./main/Main";
 import Favorite from "./favorite/Favorite";
+import Profile from "./profile/Profile";
 
 function Router(){
     return <BrowserRouter>
@@ -14,6 +15,7 @@ function Router(){
         <Route element={<Reset/>} path="/reset"/>
         <Route element={<Main/>} path="/"/>
         <Route element={<Favorite/>} path="/favorite"/>
+        <Route element={<Profile/>} path="/profile"/>
     </Routes>
     </BrowserRouter>
 }

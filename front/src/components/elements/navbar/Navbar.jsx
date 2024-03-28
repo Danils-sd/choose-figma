@@ -19,7 +19,7 @@ function Navbar(){
         if(localStorage.getItem("token") == null){ 
             navigate("/auth");
         } else {
-            navigate("/")
+            navigate("/profile")
         }
     }
     return(
