@@ -20,4 +20,10 @@ router.get("/filter/:id", controllerFilter.getO);
 
 router.post("/favorite/add", controllerFavorite.addFav);
 
+router.post("/favorite/delete", controllerFavorite.deleteFav);
+
+router.post("/favorite/chek", controllerFavorite.chekFav);
+
+router.get("/favorite/getAll/:userId", controllerFavorite.getFav)
+
 module.exports = router;

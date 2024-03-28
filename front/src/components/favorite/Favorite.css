@@ -1,0 +1,25 @@
+.favorite-container{
+    width: 1512px;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.3);
+}
+
+.favorite-container-content{
+    width: 1360px;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+    column-gap: 90px;
+    row-gap: 90px;
+    margin-bottom: 80px;
+}
+
+.favorite-container-nothing{
+    margin-top: 200px;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: 400;
+}

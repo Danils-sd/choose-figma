@@ -1,6 +1,6 @@
 import "./LayoutsCard.css";
 import CONSTS from "../../../CONSTS"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function LayoutsCard({
     id,
     userId,
@@ -12,9 +12,30 @@ function LayoutsCard({
     lang
 }){
     const [imgSrc, setImgSrc] = useState("./imgs/fav-dell.png");
-    const [isAdding, setIsAdding] = useState(0);
+    const [isAdding, setIsAdding] = useState(false);
+
+    useEffect(() => {
+        fetch(CONSTS.URL + "/favorite/chek", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userId: userId,
+                layoutId: id
+            })
+        }).then(res => {
+            return res.json();
+        }).then(({data}) => {
+            if(data == 1){
+                setIsAdding(true);
+                setImgSrc("./imgs/fav-add.png");
+            }
+        })
+    }, [])
+
     const handlAddFavorite = () => {
-        if(isAdding == 0){
+        if(!isAdding){
             fetch(CONSTS.URL + "/favorite/add", {
                 method: "POST",
                 headers: {
@@ -30,7 +51,26 @@ function LayoutsCard({
                 console.log(data)
                 if(data == 1){
                     setImgSrc("./imgs/fav-add.png")
-                    setIsAdding(1);
+                    setIsAdding(true);
+                }
+            })
+        } else {
+            fetch(CONSTS.URL + "/favorite/delete", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userId: userId,
+                    layoutId: id
+                })
+            }).then(res => {
+                return res.json();
+            }).then(({data}) => {
+                console.log(data)
+                if(data == 1){
+                    setImgSrc("./imgs/fav-dell.png")
+                    setIsAdding(false);
                 }
             })
         }
