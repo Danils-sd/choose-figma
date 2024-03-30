@@ -36,7 +36,26 @@ async function getLayouts(userId){
     }
 }
 
+async function createLayout(doc){
+    try {
+        const res = await data.collection("layouts").add({
+            userId: doc.userId,
+            url: doc.url,
+            pages: doc.pages,
+            name: doc.name,
+            lang: doc.lang,
+            hard: doc.hard,
+            discription: doc.discription
+        })
+        return 1;
+    } catch (error) {
+        console.log(error);
+        return -1;
+    }
+}
+
 module.exports ={
     getUser,
-    getLayouts
+    getLayouts,
+    createLayout
 }

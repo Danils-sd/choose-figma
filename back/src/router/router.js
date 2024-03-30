@@ -32,4 +32,6 @@ router.get("/user/get/:userId", controllerUser.getU);
 
 router.get("/user/getLayouts/:userId", controllerUser.getLa);
 
+router.post("/user/createLayout", controllerUser.createLa);
+
 module.exports = router;

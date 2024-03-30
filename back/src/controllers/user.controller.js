@@ -1,4 +1,4 @@
-const { getUser, getLayouts } = require("../services/user.service");
+const { getUser, getLayouts, createLayout } = require("../services/user.service");
 
 async function getU(req, res){
     try {
@@ -18,7 +18,17 @@ async function getLa(req, res){
     }
 }
 
+async function createLa(req, res){
+    try{
+        const doc = req.body;
+        res.json({data: await createLayout(doc)});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     getU,
-    getLa
+    getLa,
+    createLa
 }
